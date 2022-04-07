@@ -6,4 +6,4 @@ COPY package.json .
 RUN npm i
 COPY . .
 
-CMD ["node", "SkinPeek.js"]
+CMD ["node", "RunWithSharding.js"]

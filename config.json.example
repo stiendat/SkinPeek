@@ -14,5 +14,6 @@
   "storePasswords": false,
   "ownerId": "",
   "ownerName": "",
-  "status": "Up and running!"
+  "status": "Up and running!",
+  "numberOfShards": 3
 }

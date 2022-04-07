@@ -44,6 +44,7 @@ export const loadConfig = (filename="config.json") => {
     applyConfig(loadedConfig, "ownerId", "");
     applyConfig(loadedConfig, "ownerName", "");
     applyConfig(loadedConfig, "status", "Up and running!");
+    applyConfig(loadedConfig, "numberOfShards", 3);
 
     saveConfig(filename, config);
 
