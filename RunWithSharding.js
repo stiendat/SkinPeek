@@ -1,14 +1,16 @@
-const { ShardingManager } = require('discord.js');
-const { loadConfig, default: config } = require('./misc/config');
+import { ShardingManager } from "discord.js";
+import { loadConfig } from "./misc/config.js";
 
 let _config = loadConfig();
+let shards = new Array();
 
 if (_config) {
-    const manager = new ShardingManager('./SkinPeek.js', { token: _config.token });
+    let manager = new ShardingManager('./SkinPeek.js', {
+        token: _config.token,
+        totalShards: _config.numberOfShards,
+    });
 
     manager.on('shardCreate', shard => console.log(`Launched shard ${shard.id}`));
 
-    for (let i = 0; i < _config.numberOfShards; i++) {
-        manager.spawn();
-    }
+    manager.spawn();
 }
